@@ -1,28 +1,22 @@
 const express = require('express')
-
-const app = express()
-app.use(express.json());
-
-
+const  uploader = require('./gdriveuploader')
 const Aria2 = require("aria2")
+
+uploader.googleAuth()
+
+
 const aria2 = new Aria2({
     host: '52.66.207.145',
     port: 6800,
     secure: false,
     secret: '',
     path: '/jsonrpc'
-})
-
+});
 
 aria2
     .open()
     .then(() => console.log("aria is open "))
     .catch(err => console.log("error", err));
-
-// emitted for every message sent.
-aria2.on("output", m => {
-    console.log("aria2 OUT", m);
-});
 
 // emitted for every message received.
 aria2.on("input", m => {
@@ -30,6 +24,11 @@ aria2.on("input", m => {
 });
 
 
+
+
+
+const app = express()
+app.use(express.json());
 
 app.post('/download/stop', async (req, res) => {
 

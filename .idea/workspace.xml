@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="77531003-4446-4a32-afe7-d09915e9fb68" name="Default Changelist" comment="First Damm nodejs commit yahoo 😎😎">
+    <list default="true" id="77531003-4446-4a32-afe7-d09915e9fb68" name="Default Changelist" comment="Added basic add and get status command of start and download">
+      <change afterPath="$PROJECT_DIR$/gdriveuploader.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/server.js" beforeDir="false" afterPath="$PROJECT_DIR$/server.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/yarn.lock" beforeDir="false" afterPath="$PROJECT_DIR$/yarn.lock" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -43,6 +43,54 @@
   <component name="RestClientSettings">
     <option name="REQUEST_HISTORY">
       <list>
+        <RestClientRequest>
+          <option name="httpMethod" value="GET" />
+          <option name="urlBase" value="http://localhost:8080/download/status" />
+          <option name="urlPath" value="" />
+          <option name="headers">
+            <list>
+              <KeyValuePair>
+                <option name="key" value="Content-Type" />
+                <option name="value" value="application/json" />
+              </KeyValuePair>
+            </list>
+          </option>
+          <option name="parameters">
+            <list>
+              <KeyValuePair>
+                <option name="key" value="guid" />
+                <option name="value" value="81c9b737753e8cb1" />
+              </KeyValuePair>
+            </list>
+          </option>
+          <option name="parametersEnabled" value="true" />
+          <option name="textToSend" value="" />
+          <option name="filesToSend" value="" />
+        </RestClientRequest>
+        <RestClientRequest>
+          <option name="httpMethod" value="GET" />
+          <option name="urlBase" value="http://localhost:8080/download/status" />
+          <option name="urlPath" value="" />
+          <option name="headers">
+            <list>
+              <KeyValuePair>
+                <option name="key" value="Content-Type" />
+                <option name="value" value="application/json" />
+              </KeyValuePair>
+            </list>
+          </option>
+          <option name="parameters">
+            <list>
+              <KeyValuePair>
+                <option name="key" value="guid" />
+                <option name="value" value="430584ab2c1d62c5" />
+              </KeyValuePair>
+            </list>
+          </option>
+          <option name="parametersEnabled" value="true" />
+          <option name="textToSend" value="" />
+          <option name="filesToSend" value="" />
+        </RestClientRequest>
         <RestClientRequest>
           <option name="httpMethod" value="POST" />
           <option name="urlBase" value="http://localhost:8080/download/new" />
@@ -624,10 +672,7 @@
       </list>
     </option>
   </component>
-  <component name="RunManager" selected="HTTP Request.rest-api#2">
-    <configuration name="All in rest-api" type="HttpClient.HttpRequestRunConfigurationType" factoryName="HTTP Request" temporary="true" path="$APPLICATION_CONFIG_DIR$/scratches/rest-api.http">
-      <method v="2" />
-    </configuration>
+  <component name="RunManager" selected="HTTP Request.rest-api#3">
     <configuration name="rest-api#1" type="HttpClient.HttpRequestRunConfigurationType" factoryName="HTTP Request" temporary="true" path="$APPLICATION_CONFIG_DIR$/scratches/rest-api.http" runType="Run single request">
       <method v="2" />
     </configuration>
@@ -635,6 +680,9 @@
       <method v="2" />
     </configuration>
     <configuration name="rest-api#3" type="HttpClient.HttpRequestRunConfigurationType" factoryName="HTTP Request" temporary="true" path="$APPLICATION_CONFIG_DIR$/scratches/rest-api.http" index="3" runType="Run single request">
+      <method v="2" />
+    </configuration>
+    <configuration name="gdriveuploader.js" type="NodeJSConfigurationType" temporary="true" nameIsGenerated="true" path-to-js-file="$PROJECT_DIR$/gdriveuploader.js" working-dir="$PROJECT_DIR$">
       <method v="2" />
     </configuration>
     <configuration name="devStart" type="js.build_tools.npm" temporary="true" nameIsGenerated="true">
@@ -649,11 +697,11 @@
     </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="HTTP Request.rest-api#3" />
         <item itemvalue="HTTP Request.rest-api#2" />
         <item itemvalue="npm.devStart" />
-        <item itemvalue="HTTP Request.rest-api#3" />
+        <item itemvalue="Node.js.gdriveuploader.js" />
         <item itemvalue="HTTP Request.rest-api#1" />
-        <item itemvalue="HTTP Request.All in rest-api" />
       </list>
     </recent_temporary>
   </component>
@@ -665,7 +713,7 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1609350229720</updated>
-      <workItem from="1609350231488" duration="18923000" />
+      <workItem from="1609350231488" duration="26342000" />
     </task>
     <task id="LOCAL-00001" summary="First Damm nodejs commit yahoo 😎😎">
       <created>1609355428844</created>
@@ -674,7 +722,14 @@
       <option name="project" value="LOCAL" />
       <updated>1609355428844</updated>
     </task>
-    <option name="localTasksCounter" value="2" />
+    <task id="LOCAL-00002" summary="Added basic add and get status command of start and download">
+      <created>1609400467494</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1609400467494</updated>
+    </task>
+    <option name="localTasksCounter" value="3" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -682,6 +737,7 @@
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="First Damm nodejs commit yahoo " />
-    <option name="LAST_COMMIT_MESSAGE" value="First Damm nodejs commit yahoo " />
+    <MESSAGE value="Added basic add and get status command of start and download" />
+    <option name="LAST_COMMIT_MESSAGE" value="Added basic add and get status command of start and download" />
   </component>
 </project>
