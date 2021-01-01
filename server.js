@@ -6,7 +6,7 @@ uploader.googleAuth()
 
 
 const aria2 = new Aria2({
-    host: '52.66.207.145',
+    host: '127.0.0.1',
     port: 6800,
     secure: false,
     secret: '',

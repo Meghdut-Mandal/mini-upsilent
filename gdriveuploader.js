@@ -1,6 +1,9 @@
 const fs = require('fs');
 const readline = require('readline');
 const {google} = require('googleapis');
+const mime = require('mime-types');
+const pathImp = require("path");
+
 
 // testFolder 1jSQjesBE_EzfrTLUXP08veGOZYJJHZbE
 
@@ -10,6 +13,7 @@ const SCOPES = ['https://www.googleapis.com/auth/drive'];
 // created automatically when the authorization flow completes for the first
 // time.
 const TOKEN_PATH = 'token.json';
+
 
 const googleAuth = () => {
 
@@ -95,6 +99,32 @@ function listFiles(auth) {
     });
 }
 
-function uploadFile(path ){
+function uploadFile(auth) {
+    const  location="C:\\Users\\Administrator\\Downloads\\GK__2020__720p_HEVC_HDRip_AAC_x264.mkv"
+    const drive = google.drive({version: 'v3', auth});
 
+    const folderId = '1jSQjesBE_EzfrTLUXP08veGOZYJJHZbE';
+    const fileMetadata = {
+        'name': pathImp.basename(location),
+        parents: [folderId]
+    };
+
+    const media = {
+        mimeType: mime.contentType(pathImp.extname(location)),
+        body: fs.createReadStream(location)
+    };
+    drive.files.create({
+        resource: fileMetadata,
+        media: media,
+        fields: 'id'
+    }, function (err, file) {
+        if (err) {
+            // Handle error
+            console.error(err);
+        } else {
+            console.log('File Id: ', file.id);
+        }
+    });
 }
+
+exports.fileUpload = uploadFile
