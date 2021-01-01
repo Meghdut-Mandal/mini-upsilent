@@ -1,14 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="77531003-4446-4a32-afe7-d09915e9fb68" name="Default Changelist" comment="Basic uploading function">
-      <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
+    <list default="true" id="77531003-4446-4a32-afe7-d09915e9fb68" name="Default Changelist" comment="Added .env config and uploader function is dynamic now">
+      <change afterPath="$PROJECT_DIR$/Readme.md" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/gdriveuploader.js" beforeDir="false" afterPath="$PROJECT_DIR$/gdriveuploader.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/server.js" beforeDir="false" afterPath="$PROJECT_DIR$/server.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/testUpload.js" beforeDir="false" afterPath="$PROJECT_DIR$/testUpload.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/yarn.lock" beforeDir="false" afterPath="$PROJECT_DIR$/yarn.lock" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -40,7 +36,7 @@
     <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="nodejs_interpreter_path" value="node" />
     <property name="nodejs_package_manager_path" value="yarn" />
-    <property name="settings.editor.selected.configurable" value="preferences.keymap" />
+    <property name="settings.editor.selected.configurable" value="preferences.pluginManager" />
     <property name="vue.rearranger.settings.migration" value="true" />
   </component>
   <component name="RestClientSettings">
@@ -783,7 +779,7 @@
       <workItem from="1609350231488" duration="27677000" />
       <workItem from="1609482130229" duration="621000" />
       <workItem from="1609484086704" duration="9997000" />
-      <workItem from="1609512244750" duration="644000" />
+      <workItem from="1609512244750" duration="6510000" />
     </task>
     <task id="LOCAL-00001" summary="First Damm nodejs commit yahoo 😎😎">
       <created>1609355428844</created>
@@ -813,7 +809,14 @@
       <option name="project" value="LOCAL" />
       <updated>1609491850643</updated>
     </task>
-    <option name="localTasksCounter" value="5" />
+    <task id="LOCAL-00005" summary="Added .env config and uploader function is dynamic now">
+      <created>1609512937256</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1609512937256</updated>
+    </task>
+    <option name="localTasksCounter" value="6" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -836,17 +839,22 @@
     <MESSAGE value="Added basic add and get status command of start and download" />
     <MESSAGE value="Added Google drive api dependency" />
     <MESSAGE value="Basic uploading function" />
-    <option name="LAST_COMMIT_MESSAGE" value="Basic uploading function" />
+    <MESSAGE value="Added .env config and uploader function is dynamic now" />
+    <option name="LAST_COMMIT_MESSAGE" value="Added .env config and uploader function is dynamic now" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
       <breakpoints>
         <line-breakpoint enabled="true" type="javascript">
           <url>file://$PROJECT_DIR$/gdriveuploader.js</url>
-          <line>35</line>
+          <line>34</line>
           <option name="timeStamp" value="1" />
         </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>
+  </component>
+  <component name="XSLT-Support.FileAssociations.UIState">
+    <expand />
+    <select />
   </component>
 </project>

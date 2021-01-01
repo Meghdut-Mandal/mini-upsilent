@@ -5,7 +5,6 @@ const mime = require('mime-types');
 const pathImp = require("path");
 
 
-// testFolder 1jSQjesBE_EzfrTLUXP08veGOZYJJHZbE
 
 // If modifying these scopes, delete token.json.
 const SCOPES = ['https://www.googleapis.com/auth/drive'];
@@ -77,7 +76,8 @@ function getAccessToken(oAuth2Client, callback) {
 }
 
 /**
- * Lists the names and IDs of up to 2 files.
+ * Tries to perform a read operation using the google drive api.
+ * To see if the credentials are working fine.
  * @param {google.auth.OAuth2} auth An authorized OAuth2 client.
  */
 function listFiles(auth) {
@@ -98,10 +98,9 @@ function listFiles(auth) {
 }
 
 function uploadFileWithAuth(location, auth) {
-    // const  = "C:\\Users\\Administrator\\Downloads\\GK__2020__720p_HEVC_HDRip_AAC_x264.mkv"
     const drive = google.drive({version: 'v3', auth});
 
-    const folderId = '1jSQjesBE_EzfrTLUXP08veGOZYJJHZbE';
+    const folderId = process.env.GDRIVE_UPLOAD_ROOT;
     const fileMetadata = {
         'name': pathImp.basename(location),
         parents: [folderId]
