@@ -15,17 +15,15 @@ const SCOPES = ['https://www.googleapis.com/auth/drive'];
 const TOKEN_PATH = 'token.json';
 
 
-const googleAuth = () => {
+const googleAuth = (toExecute) => {
 
 // Load client secrets from a local file.
     fs.readFile('credentials.json', (err, content) => {
         if (err) return console.log('Error loading client secret file:', err);
         // Authorize a client with credentials, then call the Google Drive API.
-        authorize(JSON.parse(content), listFiles);
+        authorize(JSON.parse(content), toExecute);
     });
 }
-
-exports.googleAuth = googleAuth
 
 
 /**
@@ -99,8 +97,8 @@ function listFiles(auth) {
     });
 }
 
-function uploadFile(auth) {
-    const  location="C:\\Users\\Administrator\\Downloads\\GK__2020__720p_HEVC_HDRip_AAC_x264.mkv"
+function uploadFileWithAuth(location, auth) {
+    // const  = "C:\\Users\\Administrator\\Downloads\\GK__2020__720p_HEVC_HDRip_AAC_x264.mkv"
     const drive = google.drive({version: 'v3', auth});
 
     const folderId = '1jSQjesBE_EzfrTLUXP08veGOZYJJHZbE';
@@ -127,4 +125,13 @@ function uploadFile(auth) {
     });
 }
 
+
+function uploadFile(location) {
+    googleAuth((auth) => {
+        uploadFileWithAuth(location,auth)
+    })
+}
+
 exports.fileUpload = uploadFile
+exports.googleAuth = googleAuth
+exports.listFiles = listFiles

@@ -1,5 +1,6 @@
+const {fileUpload} = require("./gdriveuploader");
 const {googleAuth} = require("./gdriveuploader");
 
 
-googleAuth()
+fileUpload("C:\\Users\\Administrator\\Downloads\\GK__2020__720p_HEVC_HDRip_AAC_x264.mkv")
 
