@@ -1,42 +1,14 @@
+const mongoose = require('mongoose')
 const express = require('express')
-const uploader = require('./src/gdriveuploader')
-const Aria2 = require("aria2")
+const uploader = require('./src/controllers/gdriveuploader')
 const dotenv = require('dotenv');
+const donwloadControler =require('./src/controllers/download_controller')
 
 dotenv.config();
 
-
-const aria2cUrl=process.env.ARIA2C_URL
 const  appPort=process.env.APP_PORT
 
-
 uploader.googleAuth(uploader.listFiles)
-
-
-const aria2 = new Aria2({
-    host: aria2cUrl,
-    port: 6800,
-    secure: false,
-    secret: '',
-    path: '/jsonrpc'
-});
-
-aria2
-    .open()
-    .then(() => console.log("aria is working fine "))
-    .catch(err => console.log("error", err));
-
-// emitted for every message received.
-aria2.on("input", async m => {
-
-    if (m.method === "aria2.onDownloadComplete") {
-        console.log("finished " + m.params[0].gid)
-        const result = await aria2.call("tellStatus", m.params[0].gid)
-        console.log(result)
-    } else console.log("aria2 IN", m);
-
-});
-
 
 const app = express()
 app.use(express.json());
@@ -45,29 +17,17 @@ app.post('/download/stop', async (req, res) => {
 
 })
 
-app.post('/download/new', async (req, res) => {
-    const magnet = req.body.magnetLink
-    const guid = await aria2.call("addUri", [magnet], {dir: process.env.LOCAL_DOWNLOAD_ROOT});
-    console.log("guid " + guid)
-    res.send({
-        'guid': guid
-    })
+app.post('/download/new',donwloadControler.addDownload);
+
+app.get("/download/status", donwloadControler.getStatus)
+
+
+mongoose.connect('mongodb://localhost:27017/upsilent', {
+    useNewUrlParser: true, useUnifiedTopology: true
+}).then(() => {
+    console.log('connected to db')
+}).catch((error) => {
+    console.log(error)
 })
-
-
-app.get("/download/status", async (req, res) => {
-    let guid = req.query.guid
-    console.log("the requested guid " + guid)
-    try {
-        const result = await aria2.call("tellStatus", guid)
-        res.json(result)
-    } catch (e) {
-        console.log(e)
-        res.json({
-            message: e.message
-        })
-    }
-})
-
 
 app.listen(appPort)
