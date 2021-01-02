@@ -22,6 +22,7 @@ Run the commands on a ubuntu >=18.04 server
 3. make a .env file containing
    * *ARIA2C_URL* : hostname of the ari2c for example 127.0.0.1 if aria2c is running on the same host
    * *APP_PORT*   : the port at which the server will serve
+   * *LOCAL_DOWNLOAD_ROOT* : the path to with new downloads will be 
    * *GDRIVE_UPLOAD_ROOT* : the id of the root folder to which the files are uploaded (more on this later)
 4. To run the server `yarn run devStart`
 5. On first run the server will display a GoogleOAuth link open that link in browser 

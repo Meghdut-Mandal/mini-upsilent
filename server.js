@@ -1,5 +1,5 @@
 const express = require('express')
-const uploader = require('./gdriveuploader')
+const uploader = require('./src/gdriveuploader')
 const Aria2 = require("aria2")
 const dotenv = require('dotenv');
 
@@ -7,7 +7,7 @@ dotenv.config();
 
 
 const aria2cUrl=process.env.ARIA2C_URL
-const  appPort=process.env.APP_POST
+const  appPort=process.env.APP_PORT
 
 
 uploader.googleAuth(uploader.listFiles)
@@ -31,7 +31,7 @@ aria2.on("input", async m => {
 
     if (m.method === "aria2.onDownloadComplete") {
         console.log("finished " + m.params[0].gid)
-        const result = await aria2.call("tellStatus", guid)
+        const result = await aria2.call("tellStatus", m.params[0].gid)
         console.log(result)
     } else console.log("aria2 IN", m);
 
@@ -47,7 +47,7 @@ app.post('/download/stop', async (req, res) => {
 
 app.post('/download/new', async (req, res) => {
     const magnet = req.body.magnetLink
-    const guid = await aria2.call("addUri", [magnet], {dir: "/mnt/c/Users/Administrator/WebstormProjects/mini-upsilent"});
+    const guid = await aria2.call("addUri", [magnet], {dir: process.env.LOCAL_DOWNLOAD_ROOT});
     console.log("guid " + guid)
     res.send({
         'guid': guid
