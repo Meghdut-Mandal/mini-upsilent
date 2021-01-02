@@ -1,16 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="77531003-4446-4a32-afe7-d09915e9fb68" name="Default Changelist" comment="Added Database schema and Refactoring done">
-      <change afterPath="$PROJECT_DIR$/src/controllers/download_controller.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/models/download_model.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/models/download_status_model.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/models/user_model.js" afterDir="false" />
+    <list default="true" id="77531003-4446-4a32-afe7-d09915e9fb68" name="Default Changelist" comment="Refactored into controllers and download Function functional">
+      <change afterPath="$PROJECT_DIR$/src/controllers/rclone_controller.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/httpRequests/2021-01-03T025436.200.json" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/httpRequests/2021-01-03T025436.200.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/server.js" beforeDir="false" afterPath="$PROJECT_DIR$/server.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/database.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/gdriveuploader.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/controllers/gdriveuploader.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/testUpload.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/controllers/download_controller.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/controllers/download_controller.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -26,6 +22,14 @@
   </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="GitSEFilterConfiguration">
+    <file-type-list>
+      <filtered-out-file-type name="LOCAL_BRANCH" />
+      <filtered-out-file-type name="REMOTE_BRANCH" />
+      <filtered-out-file-type name="TAG" />
+      <filtered-out-file-type name="COMMIT_BY_MESSAGE" />
+    </file-type-list>
   </component>
   <component name="ProjectId" id="1mO2HdJdRSypcihJVs7Z3YFg7hP" />
   <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
@@ -43,6 +47,7 @@
     <property name="nodejs_interpreter_path" value="node" />
     <property name="nodejs_package_manager_path" value="yarn" />
     <property name="settings.editor.selected.configurable" value="preferences.pluginManager" />
+    <property name="ts.external.directory.path" value="C:\Program Files (x86)\JetBrains\WebStorm 2020.3\plugins\JavaScriptLanguage\jsLanguageServicesImpl\external" />
     <property name="vue.rearranger.settings.migration" value="true" />
   </component>
   <component name="RecentsManager">
@@ -68,7 +73,47 @@
             </list>
           </option>
           <option name="haveTextToSend" value="true" />
+          <option name="textToSend" value="{&#10;  &quot;userId&quot; : &quot;testUser&quot;,&#10;  &quot;name&quot;: &quot;Onlyfans &quot;,&#10;  &quot;link&quot;: &quot;magnet:?xt=urn:btih:623B78273AA133F1E684F2FB2169D9CEB470BE0E&amp;dn=OnlyFans+-+Belle+Delphine+-+Compilation+-+3+Videos+-+All+Sex&amp;tr=udp%3A%2F%2Ftracker.coppersurfer.tk%3A6969%2Fannounce&amp;tr=udp%3A%2F%2F9.rarbg.to%3A2920%2Fannounce&amp;tr=udp%3A%2F%2Ftracker.opentrackr.org%3A1337&amp;tr=udp%3A%2F%2Ftracker.internetwarriors.net%3A1337%2Fannounce&amp;tr=udp%3A%2F%2Ftracker.leechers-paradise.org%3A6969%2Fannounce&amp;tr=udp%3A%2F%2Ftracker.coppersurfer.tk%3A6969%2Fannounce&amp;tr=udp%3A%2F%2Ftracker.pirateparty.gr%3A6969%2Fannounce&amp;tr=udp%3A%2F%2Ftracker.cyberia.is%3A6969%2Fannounce&quot;&#10;}" />
+          <option name="filesToSend" value="" />
+        </RestClientRequest>
+        <RestClientRequest>
+          <option name="httpMethod" value="POST" />
+          <option name="urlBase" value="http://localhost:8080/download/new" />
+          <option name="urlPath" value="" />
+          <option name="headers">
+            <list>
+              <KeyValuePair>
+                <option name="key" value="Content-Type" />
+                <option name="value" value="application/json" />
+              </KeyValuePair>
+            </list>
+          </option>
+          <option name="haveTextToSend" value="true" />
           <option name="textToSend" value="{&#10;  &quot;userId&quot; : &quot;testUser&quot;,&#10;  &quot;name&quot;: &quot;Onlyfans &quot;,&#10;  &quot;link&quot;: &quot;magnet:?xt=urn:btih:F4E78B581E63A73D8F1E1BB01E5EC36AF0CF7CCD&amp;dn=Belle+Delphine+Christmas+Onlyfans+Porn+Video&amp;tr=udp%3A%2F%2Ftracker.coppersurfer.tk%3A6969%2Fannounce&amp;tr=udp%3A%2F%2F9.rarbg.to%3A2920%2Fannounce&amp;tr=udp%3A%2F%2Ftracker.opentrackr.org%3A1337&amp;tr=udp%3A%2F%2Ftracker.internetwarriors.net%3A1337%2Fannounce&amp;tr=udp%3A%2F%2Ftracker.leechers-paradise.org%3A6969%2Fannounce&amp;tr=udp%3A%2F%2Ftracker.coppersurfer.tk%3A6969%2Fannounce&amp;tr=udp%3A%2F%2Ftracker.pirateparty.gr%3A6969%2Fannounce&amp;tr=udp%3A%2F%2Ftracker.cyberia.is%3A6969%2Fannounce&quot;&#10;}" />
+          <option name="filesToSend" value="" />
+        </RestClientRequest>
+        <RestClientRequest>
+          <option name="httpMethod" value="GET" />
+          <option name="urlBase" value="http://localhost:8080/download/status" />
+          <option name="urlPath" value="" />
+          <option name="headers">
+            <list>
+              <KeyValuePair>
+                <option name="key" value="Content-Type" />
+                <option name="value" value="application/json" />
+              </KeyValuePair>
+            </list>
+          </option>
+          <option name="parameters">
+            <list>
+              <KeyValuePair>
+                <option name="key" value="guid" />
+                <option name="value" value="326ffe0c716dd255" />
+              </KeyValuePair>
+            </list>
+          </option>
+          <option name="parametersEnabled" value="true" />
+          <option name="textToSend" value="" />
           <option name="filesToSend" value="" />
         </RestClientRequest>
         <RestClientRequest>
@@ -848,13 +893,13 @@
     <configuration name="rest-api#2" type="HttpClient.HttpRequestRunConfigurationType" factoryName="HTTP Request" temporary="true" path="$APPLICATION_CONFIG_DIR$/scratches/rest-api.http" index="2" runType="Run single request">
       <method v="2" />
     </configuration>
-    <configuration name="rest-api#4" type="HttpClient.HttpRequestRunConfigurationType" factoryName="HTTP Request" temporary="true" path="$APPLICATION_CONFIG_DIR$/scratches/rest-api.http" index="4" runType="Run single request">
+    <configuration name="rest-api#3" type="HttpClient.HttpRequestRunConfigurationType" factoryName="HTTP Request" temporary="true" path="$APPLICATION_CONFIG_DIR$/scratches/rest-api.http" index="3" runType="Run single request">
       <method v="2" />
     </configuration>
-    <configuration name="rest-api#5" type="HttpClient.HttpRequestRunConfigurationType" factoryName="HTTP Request" temporary="true" path="$APPLICATION_CONFIG_DIR$/scratches/rest-api.http" index="5" runType="Run single request">
+    <configuration name="server.js" type="NodeJSConfigurationType" temporary="true" nameIsGenerated="true" path-to-js-file="$PROJECT_DIR$/server.js" working-dir="$PROJECT_DIR$">
       <method v="2" />
     </configuration>
-    <configuration name="uplsilent_models.js" type="NodeJSConfigurationType" temporary="true" nameIsGenerated="true" path-to-js-file="$PROJECT_DIR$/src/models/uplsilent_models.js" working-dir="$PROJECT_DIR$">
+    <configuration name="test.js" type="NodeJSConfigurationType" temporary="true" nameIsGenerated="true" path-to-js-file="$PROJECT_DIR$/src/test.js" working-dir="$PROJECT_DIR$/src">
       <method v="2" />
     </configuration>
     <configuration name="devStart" type="js.build_tools.npm" temporary="true" nameIsGenerated="true">
@@ -870,10 +915,10 @@
     <recent_temporary>
       <list>
         <item itemvalue="HTTP Request.rest-api#2" />
+        <item itemvalue="Node.js.server.js" />
+        <item itemvalue="Node.js.test.js" />
         <item itemvalue="npm.devStart" />
-        <item itemvalue="Node.js.uplsilent_models.js" />
-        <item itemvalue="HTTP Request.rest-api#4" />
-        <item itemvalue="HTTP Request.rest-api#5" />
+        <item itemvalue="HTTP Request.rest-api#3" />
       </list>
     </recent_temporary>
   </component>
@@ -889,7 +934,7 @@
       <workItem from="1609482130229" duration="621000" />
       <workItem from="1609484086704" duration="9997000" />
       <workItem from="1609512244750" duration="11825000" />
-      <workItem from="1609529533079" duration="16215000" />
+      <workItem from="1609529533079" duration="21750000" />
     </task>
     <task id="LOCAL-00001" summary="First Damm nodejs commit yahoo 😎😎">
       <created>1609355428844</created>
@@ -940,7 +985,14 @@
       <option name="project" value="LOCAL" />
       <updated>1609608582223</updated>
     </task>
-    <option name="localTasksCounter" value="8" />
+    <task id="LOCAL-00008" summary="Refactored into controllers and download Function functional">
+      <created>1609617348550</created>
+      <option name="number" value="00008" />
+      <option name="presentableId" value="LOCAL-00008" />
+      <option name="project" value="LOCAL" />
+      <updated>1609617348550</updated>
+    </task>
+    <option name="localTasksCounter" value="9" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -966,15 +1018,29 @@
     <MESSAGE value="Added .env config and uploader function is dynamic now" />
     <MESSAGE value="Added Readme.md" />
     <MESSAGE value="Added Database schema and Refactoring done" />
-    <option name="LAST_COMMIT_MESSAGE" value="Added Database schema and Refactoring done" />
+    <MESSAGE value="Refactored into controllers and download Function functional" />
+    <option name="LAST_COMMIT_MESSAGE" value="Refactored into controllers and download Function functional" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
       <breakpoints>
         <line-breakpoint enabled="true" type="javascript">
-          <url>file://$PROJECT_DIR$/src/controllers/gdriveuploader.js</url>
-          <line>34</line>
-          <option name="timeStamp" value="1" />
+          <url>file://$PROJECT_DIR$/src/controllers/rclone_controller.js</url>
+          <line>13</line>
+          <properties lambdaOrdinal="-1" />
+          <option name="timeStamp" value="4" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="javascript">
+          <url>file://$PROJECT_DIR$/src/test.js</url>
+          <line>3</line>
+          <properties lambdaOrdinal="-1" />
+          <option name="timeStamp" value="5" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="javascript">
+          <url>file://$PROJECT_DIR$/src/controllers/download_controller.js</url>
+          <line>45</line>
+          <properties lambdaOrdinal="-1" />
+          <option name="timeStamp" value="8" />
         </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>
