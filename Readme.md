@@ -2,13 +2,6 @@
 Kuch acha caption sochenga 
 ## Installation 
 
-Requires yarn and nodejs and aria2c on a server
-### Installing RClone
-Run the commands on a ubuntu >= 18.04 Server
-* curl https://rclone.org/install.sh | sudo bash
-* Ha itna kafi hai 😂
-
-
 ### Installing aria2c 
 Run the commands on a ubuntu >=18.04 server 
 * `sudo apt-get update -y` this updates the repositories 
@@ -20,15 +13,24 @@ Run the commands on a ubuntu >=18.04 server
 * Press *Ctrl + b*  then *d* (after releasing the Ctrl key 😑)  to detach the tmux session this keeps aria2 running in background
 * You can connect back to the session by `tmux attach` and can again detach it by *Ctrl + b* and *d*
 
+Requires yarn and nodejs and aria2c on a server
+### Installing RClone
+Run the commands on a ubuntu >= 18.04 Server
+* curl https://rclone.org/install.sh | sudo bash
+* `tmux`  this opens us a separate bash window
+* `rclone rcd --rc-no-auth`  
+  * this starts rclone at a port, and displayed at the cmd line
+* Update the *RCLONE_HOST* and *RCLONE_PORT* in the *.env* file
 
 ### Installing the server  
 1. `yarn`  // install all dependencies
 2. get google drive credentials.json [NodeJs Google Drive Quick start](https://developers.google.com/drive/api/v3/quickstart/nodejs)
 3. make a .env file containing
-   * *ARIA2C_URL* : hostname of the ari2c for example 127.0.0.1 if aria2c is running on the same host
+   * *ARIA2C_HOST* : hostname of the ari2c for example 127.0.0.1 if aria2c is running on the same host
    * *APP_PORT*   : the port at which the server will serve
    * *LOCAL_DOWNLOAD_ROOT* : the path to with new downloads will be 
    * *GDRIVE_UPLOAD_ROOT* : the id of the root folder to which the files are uploaded (more on this later)
+
 4. To run the server `yarn run devStart`
 5. On first run the server will display a GoogleOAuth link open that link in browser 
 6. Authenticate the app then you will get a code paste that in terminal to continue 
