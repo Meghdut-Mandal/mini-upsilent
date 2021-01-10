@@ -3,6 +3,11 @@ Kuch acha caption sochenga
 ## Installation 
 
 Requires yarn and nodejs and aria2c on a server
+### Installing RClone
+Run the commands on a ubuntu >= 18.04 Server
+* curl https://rclone.org/install.sh | sudo bash
+* Ha itna kafi hai 😂
+
 
 ### Installing aria2c 
 Run the commands on a ubuntu >=18.04 server 
